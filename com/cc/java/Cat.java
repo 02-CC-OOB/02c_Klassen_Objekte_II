@@ -4,46 +4,62 @@ public class Cat {
  
    private String name;
    private String furColor;
+   
    private int age;
+   private boolean isFemale;
+   
+   private int counter;
 
-    public Cat(String name, String furColor, int age) {
-        this.name = name;
-        this.furColor = furColor;
-        this.age = age;
-	}
 
-    public String getName() {
-        return name;
+
+    public Cat(String name, String furColor, int age, boolean isFemale) {
+    this.name = name;
+    this.furColor = furColor;
+    this.age = age;
+    this.isFemale = isFemale;
+}
+
+    public String getNamgetStringAttributes(String flag) {
+
+        switch (flag) {
+            case "#name":
+                return name;
+            case "#color":
+                return furColor;
+            default:
+                return "#!ERRPR";       
+        }
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getAge() {
+    if (!isFemale) {
+        return Integer.toString(age);    
+    } else {
+        return checkEscalationLevel();
     }
 
-    public String getFurColor() {
-        return furColor;
-    }
-
-    public void setFurColor(String furColor) {
-        this.furColor = furColor;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-
+}
 
     
 
-
-
+    private String checkEscalationLevel() {
+   
     
-
+    counter++;
+   
+   
+    switch (counter) {
+        case 1:
+            return "wrwer";
+        case 2:
+            return "neeeeee";
+        case 3:
+            return "--------";
+        default:
+            return "1'*12**";
+    }
+    
+}
 
     
 }
